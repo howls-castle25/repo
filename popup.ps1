@@ -1,13 +1,11 @@
-# Add-Type -AssemblyName PresentationFramework
-# [System.Windows.MessageBox]::Show("I'm working", "Status")
-
-
-# $Time = Get-Date
-# "Success! Payload executed as $env:USERNAME at $Time" | Out-File "C:\Users\Public\proof.txt" -Force
-
+# 1. Load the necessary library
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show("Hello World")
 
-[Console]::Beep(1000, 500) # Frequency 1000Hz, Duration 500ms
+# 2. Create the file
+New-Item -Path "C:\example.txt" -ItemType File -Force
 
+# 3. Show the popup
+[System.Windows.Forms.MessageBox]::Show("Hello World", "Notification")
 
+# 4. Beep
+[Console]::Beep(1000, 500)
